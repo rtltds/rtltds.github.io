@@ -1,0 +1,149 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#", 
+  "id": "http://rtltds.com/rtltds.json", 
+  "type": "object",
+  "properties": {
+    "@context": {
+      "default": "http://schema.org",
+      "description": "Name space of file",
+      "type": "string"
+    }, 
+    "@type": {
+      "default": "ScholarlyArticle", 
+      "description": "Type of article",  
+      "type": "string"
+    }, 
+   "name": {
+      "description": "Name of article", 
+      "type": "string"
+    },
+   "headline": {
+      "description": "Title of page", 
+      "type": "string"
+    },
+    "articleSection": {
+      "default": "null", 
+      "description": "Category of article", 
+      "type": "string"
+    }, 	
+    "articleBody": {
+      "description": "Abstract of article",  
+      "type": "string"
+    },
+   "keywords": {
+      "description": "Keywords of article",  
+      "type": "string"
+    },  
+   "publisher": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "default": "Organization", 
+          "description": "Type of publisher", 
+          "type": "string"
+        },
+        "name": {
+          "default": "CIVILICA", 
+          "description": "Name of publisher",
+          "type": "string"
+        },		
+        "logo": {
+          "type": "object", 
+          "properties": {
+            "@type": {
+              "default": "ImageObject", 
+              "description": "Type of publisher logo", 
+              "type": "string"
+            }, 
+            "url": {
+              "default": "https://www.civilica.com/images/logo.gif", 
+              "description": "Url of publisher logo",
+              "type": "string",
+              "format": "uri",
+              "pattern": "^(https?|wss?|ftp)://"
+            }
+          }  
+        }  
+      } 
+    },
+   "image": {
+      "default": "https://www.civilica.com/images/calendar/blank_conf.png", 
+      "description": "Image of article",  
+      "type": "string",
+      "format": "uri",
+      "pattern": "^(https?|wss?|ftp)://"
+    },
+    "inLanguage": {
+      "type": "object", 
+      "properties": {
+        "@type": {
+          "default": "Language", 
+          "description": "Type of language",
+          "type": "string"
+        }, 
+       "name": {
+          "description": "Name of language", 
+          "type": "string"
+        },
+        "alternateName": { 
+          "description": "ISO code of language", 
+          "type": "string"
+        }    
+      }  
+    },	
+    "author": {
+      "type": "array", 
+      "items": {
+        "type": "object", 
+        "properties": {
+          "@type": {
+            "default": "Person", 
+            "description": "Type of author",
+            "type": "string"
+          },
+          "name": {
+            "description": "Name of author",  
+            "type": "string"
+          }, 
+          "url": {
+            "description": "Url of author web page", 
+            "type": "string",
+            "format": "uri",
+            "pattern": "^(https?|wss?|ftp)://"
+          },		  
+         "image": { 
+            "description": "Image of author",  
+            "type": "string",
+            "format": "uri",
+            "pattern": "^(https?|wss?|ftp)://"
+          }, 
+          "affiliation": {
+          "description": "Affiliation of author", 
+            "type": "string"
+          }
+        }
+      } 
+    }, 
+    "commentCount": {
+      "default": "0", 
+      "description": "Number of comments", 
+      "type": "integer",
+      "minimum": 0
+    },
+    "url": {
+      "description": "Url of article web page", 
+      "type": "string",
+     "format": "uri",
+      "pattern": "^(https?|wss?|ftp)://"
+    },	
+   "description": {
+      "description": "Description of article", 
+      "type": "string"
+    },
+    "datePublished": {
+      "description": "Publication date of article",  
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}
